@@ -33,7 +33,7 @@
 <!-- ABOUT THE PROJECT -->
 
 ## About The Project
-
+This is a React JS and Vite website for the ECC Stats and Data Science Club. It has a section for introducing members to the club, as well as a unified location to link to other platforms. It also tracks events - upcoming and past - and has a page dedicated to future projects. 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
