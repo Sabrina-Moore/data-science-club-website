@@ -1,16 +1,69 @@
-# React + Vite
+# Data Science Club
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+         <li><a href="#features">Features</a></li>
+        <li><a href="#tech-stack">Tech Stack</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#running-the-app">Running the App</a>
+      <ul>
+        <li><a href="#getting-started">Getting Started</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Contributions</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+      </ul>
+    </li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#license">License</a></li>
+  </ol>
+</details>
 
-## React Compiler
+<!-- ABOUT THE PROJECT -->
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## About The Project
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Features
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Tech Stack
+
+- **React**
+- **JavaScript**
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Running the App
+
+
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+### Getting Started
+
+
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Contributions
+
+
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+### Prerequisites
