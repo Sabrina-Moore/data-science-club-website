@@ -7,6 +7,9 @@ import Masonry from '@mui/lab/Masonry';
 
 
 import '../index.css'
+import photo1 from '../assets/pandas.jpg'
+import photo2 from '../assets/officer-photos/officers.jpg';
+import photo3 from '../assets/officer-photos/Sabrina.jpg';
 
 
 const links = [
@@ -19,7 +22,7 @@ const links = [
 
 const OurTeam = [
   {
-    image: '../src/assets/officer-photos/Sabrina.jpg',
+    image: photo3,
     name: 'Sabrina',
     role: 'President',
     degree: 'Data Science',
@@ -57,7 +60,7 @@ export default function Homepage() {
           {/* welcome */}
           {/*  image banner and title*/}
           <Box id="welcome-banner">
-            <img src="/src/assets/pandas.jpg" alt="Pandas-Seminar" className="banner-img" />
+            <img src={photo1} alt="Pandas-Seminar" className="banner-img" />
             <Box id="welcome-overlay"> 
               <Box id="welcome-content">
                 <Typography id="welcome-title" component="h2">
@@ -168,7 +171,7 @@ export default function Homepage() {
               {/* Add club images here */}
     
                <Box className="club-photo">
-                  <img src="../src/assets/officer-photos/officers.jpg" alt="Sabrina, Chris, Kayla, and Natalia" className="club-photo" />
+                  <img src={photo2} alt="Sabrina, Chris, Kayla, and Natalia" className="club-photo" />
                 </Box>
          </Box>
 
