@@ -1,22 +1,9 @@
- import { useEffect, useState } from 'react'
-import React from 'react';
 
-import Container from '@mui/material/Container';
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
+import {Container, Box, Typography, Card, CardContent, CardMedia, Button } from '@mui/material';
+import {Stack, List, ListItem, ListItemText, ListItemButton } from '@mui/material';
+import {AppBar, Toolbar} from '@mui/material';
+import Masonry from '@mui/lab/Masonry';
 
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemText from '@mui/material/ListItemText';
-
-import AppBar from '@mui/material/AppBar';
-import Toolbar from '@mui/material/Toolbar';
-import Stack from '@mui/material/Stack';
-import Divider from '@mui/material/Divider';
-
-import Card from '@mui/material/Card';
-import Button from '@mui/material/Button';
 
 import '../index.css'
 
@@ -26,8 +13,37 @@ const links = [
 {label: "Join the Club", href: 'https://docs.google.com/forms/d/e/1FAIpQLSfIvilyOgdLPUQDw7oaqMnMmQ7vzZ9nr48lLOrb7j9he-lDxA/viewform?usp=dialog'},
 {label: "Follow us on Instagram", href: ''},
 {label: "ECC Engage", href: '' },
-{label: "Github", href: ''},
+{label: "Github", href: 'https://github.com/ecc-data-science-club'},
 ];
+
+const OurTeam = [
+  {
+    image: '../src/assets/officer-photos/Sabrina.jpg',
+    name: 'Sabrina',
+    role: 'President',
+    degree: 'Data Science',
+    description: 'Returning to school to switch her career from Linguistics, Sabrina has been interested in Data Science and Computer Science, particularly the intersection on cognition and language. Right now, you can find her on campus desperately writing code for nonprofit freelancing work.',
+  },
+  {
+    name: 'Kayla',
+    role: 'Vice President',
+    degree: 'Data Science',
+    description: '',
+  },
+  {
+    name: 'Chris',
+    role: 'Treasurer',
+    degree: "Master's of Data Science in Health",
+    description: '',
+  },
+  {
+    name: 'Natalia',
+    role: 'Secretary',
+    degree: 'Data Science',
+    description: '',
+  },
+
+]
  
 export default function Homepage() {
 
@@ -67,11 +83,11 @@ export default function Homepage() {
               <ListItem className="list-text">
                 - Club meetings: lesson-based meetings to teach skills based on the current project milestone (also sometimes fun activities!) </ListItem>
               <ListItem className="list-text">
-                - Social eents: Hangout and meet your peers </ListItem>
+                - Social events: Hangout and meet your peers </ListItem>
               <ListItem className="list-text">
                 - Professional development and industry events: Campus tours and learning related skills like how to create your resume or network on LinkedIn </ListItem>
               <ListItem className="list-text">
-                - Fireside chats with Data Scientists: Q&A’s with full-time data scientists in collaboration with the ECC SEEDS project </ListItem>
+                - Guest Speakers: Q&A’s with full-time data scientists in collaboration with the ECC SEEDS project </ListItem>
               <ListItem className="list-text">
                 - And more! </ListItem>
             </List>
@@ -104,15 +120,55 @@ export default function Homepage() {
               Who We Are
             </Typography>
             <Typography className="section-text" sx={{marginTop: "15px"}}>
-              In 2025, Alumni Maxime Chung and Ceeb Ancheta founded the club to create a community of students with a genuine interest in exploring and pursuing data science and supporting their community. The club is ...
+              In 2025, Alumni Maxime Chung and Ceeb Ancheta founded the club to create a community of students with a genuine interest in exploring and pursuing data science and supporting their community. The club focused on events, hosting their own Pandas seminar, DataJam, and taking part in Texera.
             </Typography>
-            <Typography className="section-text" sx={{marginTop: "40px"}}>
-              In Spring 2026, the club unfortunately became inactive. 
+            <Typography className="section-text" sx={{marginTop: "20px"}}>
+             For complicated reasons, the club became inactive during the Spring 2026 semester. The officers were unreachable, meetings weren't held, and the members were forgotten.
+            </Typography>
+             <Typography className="section-text" sx={{marginTop: "20px"}}>
+              In May, Chris, the Vice President at the time, started reaching out to students to revive the club. 
+              Thanks to his efforts, as of Fall 2026, the officer team is: 
+            </Typography>
+        
+        {/* array */}
+        <Box className="info">
+            <Masonry columns={{ xs: 1, sm: 4}} spacing={2} sx={{ marginTop: "15px" }}>
+              {OurTeam
+                .filter((member) => member.name) // skip your empty placeholder objects
+                .map((member) => (
+                  <Card key={member.name} className="team-card" sx={{ padding: 2 }}>
+                    <CardMedia
+                      component="img"
+                      height="420"
+                      image={member.image}
+                      alt={member.name}
+                    />
+                    <CardContent>
+                      <Typography variant="h6" component="h3">
+                        {member.name}
+                      </Typography>
+                      <Typography variant="subtitle2" color="text.secondary">
+                        {member.role}
+                      </Typography>
+                      <Typography variant="body2" sx={{ fontStyle: 'italic', marginTop: 0.5 }}>
+                        {member.degree}
+                      </Typography>
+                    </CardContent>
+                  </Card>
+                ))}
+            </Masonry>
+          </Box>
+            <Typography className="section-text" sx={{marginTop: "20px", marginBottom: "20px"}}>
+              Our vision is to create a collaborative environment where students can develop their technical and professional skills, and begin networking with professionals.
+            </Typography>
+            <Typography className="section-text" sx={{marginTop: "20px", marginBottom: "20px"}}>
+             Let's create together!
             </Typography>
               {/* Add club images here */}
-            <Box id="club-photos">
-              <img src="/src/assets/data-con.jpeg" alt="data-con with Sabrina and Chris" className="club-photo" />
-            </Box>
+    
+               <Box className="club-photo">
+                  <img src="../src/assets/officer-photos/officers.jpg" alt="Sabrina, Chris, Kayla, and Natalia" className="club-photo" />
+                </Box>
          </Box>
 
           <Box id="footnote">

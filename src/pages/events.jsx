@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react'
 import React from 'react';
 
-import { Container, Box, Typography, Stack, Card, CardContent  } from '@mui/material';
+import { Container, Box, Typography, Stack, Card, CardContent, CardMedia  } from '@mui/material';
 
-
+import photo1 from '../assets/officer-photos/data-con.jpeg'
 import '../index.css'
 
 export default function Events() {
@@ -38,14 +38,14 @@ export default function Events() {
 
 const pastEvents = [
   { name: "Data Con LA 2026", 
-    description: "",
+    description: "For more than a decade, Data Con LA has been Southern California's gathering for data and technology enthusiasts, from students taking their first steps in the field to seasoned professionals shaping the future of AI, analytics, and data engineering.",
     date: "9/25/2026",
     time: "",
     location: "CSU Long Beach, 1250 Bellflower Blvd, Long Beach, CA 90840",
     rsvpLink: "",
+    photo: photo1, 
  },
 ];
-
     return(
         <>
         <Container>
@@ -114,6 +114,11 @@ const pastEvents = [
                 </Typography>
                 )}
               </CardContent>
+              <CardMedia
+                      component="img"
+                      height="420"
+                      image={event.photo}
+                    />
             </Card>
           ))}
         </Stack>
