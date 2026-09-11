@@ -25,7 +25,8 @@ import Homepage from './pages/home';
 import Projects from './pages/projects';
 import Events from './pages/events';
 
-
+import clubLogo from '/src/assets/club-logo.png';
+import eccLogo from '/src/assets/ECC-logo.png';
 
 function App() {
 
@@ -41,13 +42,13 @@ const [currentPage, setCurrentPage] = useState("home");
         <Toolbar>
           {/* logo - left */}
           <Box id="club-logo" className="club-logo">
-            <img src="/src/assets/club-logo.png" alt="club logo" className="club-logo-img" />
+            <img src={clubLogo} alt="club logo" className="club-logo-img" />
           </Box>
           <Typography id="header" component="h1">
             ECC Stats and Data Science Club
           </Typography>
            <Box id="club-logo" className="club-logo">
-            <img src="/src/assets/ECC-logo.png" alt="ECC logo" className="club-logo-img" />
+            <img src={eccLogo} alt="ECC logo" className="club-logo-img" />
           </Box>
           {/* pushes anything after it to the right */}
           <Box sx={{ flexGrow: 1 }} />
