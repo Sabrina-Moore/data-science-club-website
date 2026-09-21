@@ -10,41 +10,44 @@ import '../index.css'
 import photo1 from '../assets/pandas.jpg'
 import photo2 from '../assets/officer-photos/officers.jpg';
 import photo3 from '../assets/officer-photos/Sabrina.jpg';
+import photo4 from '../assets/officer-photos/Chris.jpg';
 
+console.log("Chris image:", photo4);
 
 const links = [
 {label: "Join our Discord", href: 'https://discord.gg/ThPZAmd59u'},
 {label: "Join the Club", href: 'https://docs.google.com/forms/d/e/1FAIpQLSfIvilyOgdLPUQDw7oaqMnMmQ7vzZ9nr48lLOrb7j9he-lDxA/viewform?usp=dialog'},
-{label: "Follow us on Instagram", href: ''},
-{label: "ECC Engage", href: '' },
+{label: "Follow us on Instagram", href: 'https://www.instagram.com/ecc_datascienceclub'},
+{label: "ECC Engage", href: ''},
 {label: "Github", href: 'https://github.com/ecc-data-science-club'},
 ];
 
 const OurTeam = [
   {
+    id: 1,
     image: photo3,
     name: 'Sabrina',
     role: 'President',
-    degree: 'Data Science',
-    description: 'Returning to school to switch her career from Linguistics, Sabrina has been interested in Data Science and Computer Science, particularly the intersection on cognition and language. Right now, you can find her on campus desperately writing code for nonprofit freelancing work.',
+    degree: 'Computer Science',
   },
   {
+    id: 2,
     name: 'Kayla',
     role: 'Vice President',
     degree: 'Data Science',
-    description: '',
   },
   {
+    id: 3,
+    image: photo4,
     name: 'Chris',
     role: 'Treasurer',
-    degree: "Master's of Data Science in Health",
-    description: '',
+    degree: "Master's of Biomedicine in Data Science",
   },
   {
+    id: 4,
     name: 'Natalia',
     role: 'Secretary',
     degree: 'Data Science',
-    description: '',
   },
 
 ]
@@ -136,11 +139,11 @@ export default function Homepage() {
         
         {/* array */}
         <Box className="info">
-            <Masonry columns={{ xs: 1, sm: 4}} spacing={2} sx={{ marginTop: "15px" }}>
+            <Masonry columns={{ xs: 1, sm: 4}} spacing={1} sx={{ marginTop: "20px" }}>
               {OurTeam
-                .filter((member) => member.name) // skip your empty placeholder objects
+                .filter((member) => member.name)
                 .map((member) => (
-                  <Card key={member.name} className="team-card" sx={{ padding: 2 }}>
+                  <Card key={member.id} className="team-card" sx={{ padding: 2 }}>
                     <CardMedia
                       component="img"
                       height="420"
@@ -154,7 +157,7 @@ export default function Homepage() {
                       <Typography variant="subtitle2" color="text.secondary">
                         {member.role}
                       </Typography>
-                      <Typography variant="body2" sx={{ fontStyle: 'italic', marginTop: 0.5 }}>
+                      <Typography variant="body2" sx={{ fontStyle: 'italic' }}>
                         {member.degree}
                       </Typography>
                     </CardContent>
@@ -162,6 +165,7 @@ export default function Homepage() {
                 ))}
             </Masonry>
           </Box>
+
             <Typography className="section-text" sx={{marginTop: "20px", marginBottom: "20px"}}>
               Our vision is to create a collaborative environment where students can develop their technical and professional skills, and begin networking with professionals.
             </Typography>
