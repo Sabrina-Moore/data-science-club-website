@@ -3,6 +3,8 @@
 import { useEffect, useState } from 'react'
 import React from 'react';
 
+import { Analytics } from "@vercel/analytics/react" //for vercel analytics
+
 import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';

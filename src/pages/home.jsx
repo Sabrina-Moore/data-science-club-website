@@ -11,6 +11,7 @@ import photo1 from '../assets/pandas.jpg'
 import photo2 from '../assets/officer-photos/officers.jpg';
 import photo3 from '../assets/officer-photos/Sabrina.jpg';
 import photo4 from '../assets/officer-photos/Chris.jpg';
+import photo5 from '../assets/officer-photos/Kayla.jpeg';
 
 console.log("Chris image:", photo4);
 
@@ -32,6 +33,7 @@ const OurTeam = [
   },
   {
     id: 2,
+    image: photo5,
     name: 'Kayla',
     role: 'Vice President',
     degree: 'Data Science',
