@@ -19,7 +19,7 @@ const links = [
 {label: "Join our Discord", href: 'https://discord.gg/ThPZAmd59u'},
 {label: "Join the Club", href: 'https://docs.google.com/forms/d/e/1FAIpQLSfIvilyOgdLPUQDw7oaqMnMmQ7vzZ9nr48lLOrb7j9he-lDxA/viewform?usp=dialog'},
 {label: "Follow us on Instagram", href: 'https://www.instagram.com/ecc_datascienceclub'},
-{label: "ECC Engage", href: ''},
+{label: "ECC Engage", href: 'https://elcamino.campuslabs.com/engage/organization/datascienceclub'},
 {label: "Github", href: 'https://github.com/ecc-data-science-club'},
 ];
 
@@ -132,7 +132,7 @@ export default function Homepage() {
               In 2025, Alumni Maxime Chung and Ceeb Ancheta founded the club to create a community of students with a genuine interest in exploring and pursuing data science and supporting their community. The club focused on events, hosting their own Pandas seminar, DataJam, and taking part in Texera.
             </Typography>
             <Typography className="section-text" sx={{marginTop: "20px"}}>
-             For complicated reasons, the club became inactive during the Spring 2026 semester. The officers were unreachable, meetings weren't held, and the members were forgotten.
+             For complicated reasons, the club became inactive during the Spring 2026 semester.
             </Typography>
              <Typography className="section-text" sx={{marginTop: "20px"}}>
               In May, Chris, the Vice President at the time, started reaching out to students to revive the club. 

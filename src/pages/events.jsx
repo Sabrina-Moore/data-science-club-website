@@ -3,12 +3,14 @@ import React from 'react';
 
 import { Container, Box, Typography, Stack, Card, CardContent, CardMedia  } from '@mui/material';
 
-import photo1 from '../assets/officer-photos/data-con.jpeg'
+import photo1 from '../assets/event-photos/data-con.jpeg'
+import photo2 from '../assets/event-photos/9-24-26-speakers.jpg'
+import photo3 from '../assets/event-photos/9-24-26-speakers2.jpg'
+import photo4 from '../assets/flyers/Lancer_Hacks.png'
 import '../index.css'
 
-export default function Events() {
 
-    //do I want this to be supabase run???? or hard-coded?
+ //do I want this to be supabase run???? or hard-coded?
 
     //if yes
     // const [visible, setVisible] = useState(false);
@@ -30,7 +32,7 @@ export default function Events() {
     time: "6:00 PM - 8:00 PM PST",
     location: "15916 Crenshaw Blvd, Gardena, CA 90249",
     rsvpLink: "https://www.eventbrite.com/e/2026-fall-data-science-industry-event-924-tickets-1998698386678?aff=ebdsoporgprofile",
-    photo: "",
+    photo: [photo2, photo3],
   },
   {
   name: "Data Con LA 2026", 
@@ -39,7 +41,7 @@ export default function Events() {
     time: "",
     location: "CSU Long Beach, 1250 Bellflower Blvd, Long Beach, CA 90840",
     rsvpLink: "",
-    photo: photo1, 
+    photo: [photo1], 
   },
   {
   name: "Datathon at Los Angeles City College", 
@@ -48,9 +50,19 @@ export default function Events() {
     time: "Pending",
     location: "Pending, LACC Campus",
     rsvpLink: "https://www.lacc.edu/academics/pathways/stem/math-dept/datathon",
-    photo: "", 
-  }
+    photo: [], 
+  },
+{
+  name: "Lancer Hacks at Pasadena City College", 
+    description: "Join the ECC Data Science Club at Pasadena City College for an all day hackathon. 'Brought to you by four campus clubs (She.Codes, STEM Competition Society, AI Club, and Data Science Club) and our two amazing sponsors, MESA and the Greater LA Data Science Pathways Program, LancerHacks is your chance to build something awesome in just one day. Sharpen your coding skills, meet fellow builders, and most importantly, have fun! We'll keep you fueled with free lunch, dinner, and energy drinks. Plus, compete for prizes like AirPods, mechanical keyboards, blind boxes, and more!'",
+    date: "10-30-2026",
+    time: "9:00 AM - 9:00 PM PST",
+    location: "WIFI Lounge, PCC Campus",
+    rsvpLink: "",
+    photo: [photo4], 
+  },
 ];
+
 
 // Today's date
 const today = new Date();
@@ -65,93 +77,73 @@ const pastEvents = events
   .filter((event) => new Date(event.date) < today)
   .sort((a, b) => new Date(b.date) - new Date(a.date));
 
-    return(
-        <>
-        <Container>
-        <Typography id="upcoming-title">
-          Upcoming Events
-        </Typography>
-        <Stack className="event-list" spacing={2}>
-          {upcomingEvents.map((event) => (
-            <Card key={event.name} className="event-card">
-              <CardContent>
-                <Typography className="event-name">
-                  {event.name}
-                </Typography>
-                <Typography className="event-date">
-                  Date: {event.date}
-                </Typography>
-                <Typography className="event-time">
-                  Time: {event.time}
-                </Typography>
-                <Typography className="event-description">
-                  {event.description}
-                </Typography>
-                 <Typography className="event-location">
-                  {event.location}
-                </Typography>
-                {event.rsvpLink && (
-                <Typography className="event-rsvp">
-                  <a href={event.rsvpLink} target="_blank" rel="noopener noreferrer">
-                    RSVP here
-                  </a>
-                </Typography>
-                )}
-              </CardContent>
-              {event.photo && (
-              <CardMedia
-                component="img"
-                height="420"
-                image={event.photo}
-              />
-            )}
-            </Card>
+
+
+// resuable component for for the card event
+const EventCard = ({ event }) => {
+  const photoList = Array.isArray(event.photo)
+    ? event.photo.filter(Boolean)
+    : event.photo
+    ? [event.photo]
+    : [];
+
+  return (
+    <Card className="event-card">
+      <CardContent>
+        <Typography className="event-name">{event.name}</Typography>
+        <Typography className="event-date">Date: {event.date}</Typography>
+        {event.time && <Typography className="event-time">Time: {event.time}</Typography>}
+        <Typography className="event-description">{event.description}</Typography>
+        <Typography className="event-location">{event.location}</Typography>
+        {event.rsvpLink && (
+          <Typography className="event-rsvp">
+            <a href={event.rsvpLink} target="_blank" rel="noopener noreferrer">
+              RSVP here
+            </a>
+          </Typography>
+        )}
+      </CardContent>
+
+      {photoList.length > 0 && (
+        <Stack direction="row" spacing={1} sx={{ p: 2, overflowX: 'auto' }}>
+          {photoList.map((imgSrc, index) => (
+            <CardMedia
+              key={index}
+              component="img"
+              image={imgSrc}
+              alt={`${event.name} photo ${index + 1}`}
+              sx={{
+                maxHeight: "100%",
+                width:'100%',
+                objectFit: 'cover',
+                borderRadius: 1,
+              }}
+            />
           ))}
         </Stack>
+      )}
+    </Card>
+  );
+};
 
-        {/* past events */}
-         <Typography id="past-title">
-          Past Events
-        </Typography>
-        <Stack className="event-list" spacing={2}>
-          {pastEvents.map((event) => (
-            <Card key={event.name} className="event-card">
-              <CardContent>
-                <Typography className="event-name">
-                  {event.name}
-                </Typography>
-                <Typography className="event-date">
-                  Date: {event.date}
-                </Typography>
-                <Typography className="event-time">
-                  Time: {event.time}
-                </Typography>
-                <Typography className="event-description">
-                  {event.description}
-                </Typography>
-                 <Typography className="event-location">
-                  {event.location}
-                </Typography>
-                {event.rsvpLink && (
-                <Typography className="event-rsvp">
-                  <a href={event.rsvpLink} target="_blank" rel="noopener noreferrer">
-                    RSVP here
-                  </a>
-                </Typography>
-                )}
-              </CardContent>
-              {event.photo && (
-                <CardMedia
-                  component="img"
-                  height="420"
-                  image={event.photo}
-                />
-              )}     
-            </Card>
-          ))}
-        </Stack>
-      </Container>
 
-     </>
-    );
+export default function Events() {
+
+return(
+    <Container>
+      <Typography id="upcoming-title">Upcoming Events</Typography>
+      <Stack className="event-list" spacing={2}>
+        {upcomingEvents.map((event) => (
+          <EventCard key={event.name} event={event} />
+        ))}
+      </Stack>
+
+      <Typography id="past-title">Past Events</Typography>
+      <Stack className="event-list" spacing={2}>
+        {pastEvents.map((event) => (
+          <EventCard key={event.name} event={event} />
+        ))}
+      </Stack>
+    </Container>
+  );
 }
