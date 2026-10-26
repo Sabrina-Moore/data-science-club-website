@@ -1,13 +1,13 @@
-import { useEffect, useState } from 'react'
-import React from 'react';
-
-import { Container, Box, Typography, Stack, Card, CardContent, CardMedia  } from '@mui/material';
+import { Container } from '@mui/material'
+import EventList from '../components/eventList'
 
 import photo1 from '../assets/event-photos/data-con.jpeg'
 import photo2 from '../assets/event-photos/9-24-26-speakers.jpg'
 import photo3 from '../assets/event-photos/9-24-26-speakers2.jpg'
 import photo4 from '../assets/flyers/Lancer_Hacks.png'
+import photo5 from '../assets/event-photos/LACC_Datathon_Awards.png'
 import '../index.css'
+
 
 
  //do I want this to be supabase run???? or hard-coded?
@@ -45,12 +45,12 @@ import '../index.css'
   },
   {
   name: "Datathon at Los Angeles City College", 
-    description: "Join the President Sabrina at the LACC Datathon. Register ASAP! 'The purpose of Datathon is to provide students with hands-on experience in data science, helping them build skills in coding, analyzing, and data visualization in an inclusive, collaborative environment. Students will be introduced to R Studio through a series of self-guided coding exercises, after which they will work in teams to analyze datasets. Students give presentations in order to demonstrate the ability to apply newly acquired skills in innovative and educational ways.  Prior coding experience is unnecessary; we welcome interested students of all levels!'",
+    description: "Join us at the LACC Datathon. Register ASAP! 'The purpose of Datathon is to provide students with hands-on experience in data science, helping them build skills in coding, analyzing, and data visualization in an inclusive, collaborative environment. Students will be introduced to R Studio through a series of self-guided coding exercises, after which they will work in teams to analyze datasets. Students give presentations in order to demonstrate the ability to apply newly acquired skills in innovative and educational ways.  Prior coding experience is unnecessary; we welcome interested students of all levels!'",
     date: "10-24-2026",
     time: "Pending",
     location: "Pending, LACC Campus",
     rsvpLink: "https://www.lacc.edu/academics/pathways/stem/math-dept/datathon",
-    photo: [], 
+    photo: [photo5], 
   },
 {
   name: "Lancer Hacks at Pasadena City College", 
@@ -79,71 +79,20 @@ const pastEvents = events
 
 
 
-// resuable component for for the card event
-const EventCard = ({ event }) => {
-  const photoList = Array.isArray(event.photo)
-    ? event.photo.filter(Boolean)
-    : event.photo
-    ? [event.photo]
-    : [];
-
-  return (
-    <Card className="event-card">
-      <CardContent>
-        <Typography className="event-name">{event.name}</Typography>
-        <Typography className="event-date">Date: {event.date}</Typography>
-        {event.time && <Typography className="event-time">Time: {event.time}</Typography>}
-        <Typography className="event-description">{event.description}</Typography>
-        <Typography className="event-location">{event.location}</Typography>
-        {event.rsvpLink && (
-          <Typography className="event-rsvp">
-            <a href={event.rsvpLink} target="_blank" rel="noopener noreferrer">
-              RSVP here
-            </a>
-          </Typography>
-        )}
-      </CardContent>
-
-      {photoList.length > 0 && (
-        <Stack direction="row" spacing={1} sx={{ p: 2, overflowX: 'auto' }}>
-          {photoList.map((imgSrc, index) => (
-            <CardMedia
-              key={index}
-              component="img"
-              image={imgSrc}
-              alt={`${event.name} photo ${index + 1}`}
-              sx={{
-                maxHeight: "100%",
-                width:'100%',
-                objectFit: 'cover',
-                borderRadius: 1,
-              }}
-            />
-          ))}
-        </Stack>
-      )}
-    </Card>
-  );
-};
-
-
 export default function Events() {
-
-return(
+  return (
     <Container>
-      <Typography id="upcoming-title">Upcoming Events</Typography>
-      <Stack className="event-list" spacing={2}>
-        {upcomingEvents.map((event) => (
-          <EventCard key={event.name} event={event} />
-        ))}
-      </Stack>
-
-      <Typography id="past-title">Past Events</Typography>
-      <Stack className="event-list" spacing={2}>
-        {pastEvents.map((event) => (
-          <EventCard key={event.name} event={event} />
-        ))}
-      </Stack>
+      <EventList
+        title="Upcoming Events"
+        titleId="upcoming-title"
+        events={upcomingEvents}
+        emptyMessage="No upcoming events right now. Check back soon!"
+      />
+      <EventList
+        title="Past Events"
+        titleId="past-title"
+        events={pastEvents}
+      />
     </Container>
   );
 }
