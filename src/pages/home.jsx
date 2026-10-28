@@ -17,7 +17,7 @@ console.log("Chris image:", photo4);
 
 const links = [
 {label: "Join our Discord", href: 'https://discord.gg/ThPZAmd59u'},
-{label: "Join the Club", href: 'https://docs.google.com/forms/d/e/1FAIpQLSfIvilyOgdLPUQDw7oaqMnMmQ7vzZ9nr48lLOrb7j9he-lDxA/viewform?usp=dialog'},
+{label: "Join the Club", href: 'https://docs.google.com/forms/d/e/1FAIpQLScdgM2XfNPLCaKpDWW7qMhC7uEhKLSxu7ENzeFwbEJQxMc_Eg/viewform?usp=dialog'},
 {label: "Follow us on Instagram", href: 'https://www.instagram.com/ecc_datascienceclub'},
 {label: "ECC Engage", href: 'https://elcamino.campuslabs.com/engage/organization/datascienceclub'},
 {label: "Github", href: 'https://github.com/ecc-data-science-club'},
