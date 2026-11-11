@@ -1,16 +1,22 @@
 import { Container } from '@mui/material'
 import EventList from '../components/eventList'
+import '../index.css'
 
 import photo1 from '../assets/event-photos/data-con.jpeg'
 import photo2 from '../assets/event-photos/9-24-26-speakers.jpg'
 import photo3 from '../assets/event-photos/9-24-26-speakers2.jpg'
-import photo4 from '../assets/flyers/Lancer_Hacks.png'
-import photo5 from '../assets/event-photos/LACC_Datathon_Awards.png'
-import '../index.css'
-import photo6 from '../assets/flyers/Careers_Day_26.png'
-import photo7 from '../assets/flyers/ECC_spring_conference_26.webp'
-import photo8 from '../assets/flyers/industry_event_11-12.png'
+import photo4 from '../assets/event-photos/LACC_Datathon_Awards.png'
+import photo5 from '../assets/event-photos/careers_day_AI_panel.jpg'
+import photo6 from '../assets/event-photos/careers_day_interview_panel.jpg'
+import photo7 from '../assets/event-photos/LancerHacks_intro.jpg'
+import photo8 from '../assets/event-photos/LancerHacks_team.jpg'
+import photo9 from '../assets/event-photos/LancerHacks_room.jpg'
+import photo10 from '../assets/event-photos/LancerHacks_award.jpg'
 
+import flyer1 from '../assets/flyers/Lancer_Hacks.png'
+import flyer2 from '../assets/flyers/Careers_Day_26.png'
+import flyer3 from '../assets/flyers/ECC_spring_conference_26.webp'
+import flyer4 from '../assets/flyers/industry_event_11-12.png'
 
 
  //do I want this to be supabase run???? or hard-coded?
@@ -28,7 +34,7 @@ import photo8 from '../assets/flyers/industry_event_11-12.png'
 
     //hard coded version
     // add new object here for more events
-    const events = [
+  const events = [
   {
   name: "Data Science Spring Conference 2026", 
     description: "Explore real-world applications fo data science, hear from industry professionals and guests from the University of California, Berkeley, and connect with fellow students. Whether you're just starting or already interested in data and AI, this event offers insights, inspiration, and opportunities for your future.",
@@ -36,7 +42,8 @@ import photo8 from '../assets/flyers/industry_event_11-12.png'
     time: "8:30 AM - 2:30 PM PST",
     location: "El Camino College",
     rsvpLink: "",
-    photo: [photo7], 
+    photo: [],
+    flyers: [flyer3],
   },
   { name: "SEEDS Data Industry Event: Dr. Yong-Chuan Liu", 
     description: "Join the ECC SEEDS Project for an industry event at the Lab. The speaker is Dr Yong-Chuan Liu, the former Chief Data Scientist at IBM and founder of RMDS Lab who will be talking about his field. Free parking and free food. RSVP required.",
@@ -45,6 +52,7 @@ import photo8 from '../assets/flyers/industry_event_11-12.png'
     location: "15916 Crenshaw Blvd, Gardena, CA 90249",
     rsvpLink: "https://www.eventbrite.com/e/2026-fall-data-science-industry-event-924-tickets-1998698386678?aff=ebdsoporgprofile",
     photo: [photo2, photo3],
+    flyers: [],
   },
   {
   name: "Data Con LA 2026", 
@@ -54,6 +62,7 @@ import photo8 from '../assets/flyers/industry_event_11-12.png'
     location: "CSU Long Beach, 1250 Bellflower Blvd, Long Beach, CA 90840",
     rsvpLink: "",
     photo: [photo1], 
+    flyers: [],
   },
   {
   name: "Datathon at Los Angeles City College", 
@@ -62,7 +71,8 @@ import photo8 from '../assets/flyers/industry_event_11-12.png'
     time: "Pending",
     location: "Pending, LACC Campus",
     rsvpLink: "https://www.lacc.edu/academics/pathways/stem/math-dept/datathon",
-    photo: [photo5], 
+    photo: [photo4], 
+    flyers: [],
   },
 {
   name: "Lancer Hacks at Pasadena City College", 
@@ -71,16 +81,18 @@ import photo8 from '../assets/flyers/industry_event_11-12.png'
     time: "9:00 AM - 9:00 PM PST",
     location: "WIFI Lounge, PCC Campus",
     rsvpLink: "",
-    photo: [photo4], 
+    photo: [photo7, photo8, photo9, photo10], 
+    flyers: [flyer1],
   },
   {
-  name: "Career Day @ CSU Fullerton", 
+  name: "Careers Day @ CSU Fullerton", 
     description: "Careers Day is an opportunity for future statisticians and users of statistics to prepare for careers in the field. We welcome all local students, as well as professionals interested in a career change, to talk with our academic statisticians, biostatisticians, business analysts, data scientists, market researchers, etc. about the career paths that best match their experience and interest and what they can do now to prepare themselves for those careers.",
     date: "11-7-2026",
     time: "9:00 AM - 12:30 PM PST",
     location: "McCarthy Hall, CSU Fullerton",
     rsvpLink: "https://docs.google.com/forms/d/e/1FAIpQLSfbU0uE156ZdVQuAVkx5FklVyJyLJPLHRQ5F77kRuQqE3pvqQ/viewform",
-    photo: [photo6], 
+    photo: [photo5, photo6], 
+    flyers: [flyer2],
   },
   {
    name: "SEEDS Data Industry Event: Sandhya Kambhampati", 
@@ -89,7 +101,8 @@ import photo8 from '../assets/flyers/industry_event_11-12.png'
     time: "6:00 PM - 8:00 PM PST",
     location: "The Lab, 15916 Crenshaw Blvd Gardena, CA",
     rsvpLink: "https://www.eventbrite.com/e/2026-fall-data-science-industry-event-1112-tickets-2003358618557?utm_term=US-Los%20Angeles-1.NonTwoTowers-Reactivation.FreeTickets-listing.previousorganizer&utm_content=69a699f2-1028-4684-982c-ced9e6f5ec7f__6acf9a59f55d477e52e6d38a34747d9b__04a9bfbc-d724-4925-9c4e-ff477bfc3c41__c5add454-d8cf-4c4b-b7b4-4c4a5cdd8940&aff=ebemnsebconsumeremail&utm_medium=ebml&utm_campaign=clab_coex_lcm_dss_mec_mc_mum_0_0_previousorganizer-reactivation&utm_source=braze&lid=u18a01m2llzx&keep_tld=true",
-    photo: [photo8], 
+    photo: [], 
+    flyers: [flyer4],
   },
 ];
 

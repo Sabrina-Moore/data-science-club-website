@@ -1,9 +1,13 @@
 import { Container, Box, Typography, Stack, Card, CardContent, CardMedia  } from '@mui/material';
 
+
+
 export default function EventCard({ event }) {
-  const { name, date, time, description, location, rsvpLink, photo } = event;
+  const { name, date, time, description, location, rsvpLink, photo, flyers } = event;
 
   const photoList = Array.isArray(photo) ? photo.filter(Boolean) : photo ? [photo] : [];
+
+  const flyersList = Array.isArray(flyers) ? flyers.filter(Boolean) : flyers ? [flyers] : [];
 
   return (
     <Card className="event-card">
@@ -30,10 +34,35 @@ export default function EventCard({ event }) {
               component="img"
               image={imgSrc}
               alt={`${name} photo ${index + 1}`}
-              sx={{ maxHeight: '100%', width: '100%', objectFit: 'cover', borderRadius: 1 }}
-            />
-          ))}
+              sx={{ 
+              width: '100%', 
+              height: '100%', 
+              objectFit: 'contain', 
+              borderRadius: 1 }}
+                  />
+            ))}
         </Stack>
+      )}
+
+      {flyersList.length > 0 && (
+        <Box>
+          {flyersList.map((imgSrc, index) => (
+          <CardMedia
+            key={index}
+            component="img"
+            image={imgSrc}
+            alt={`${name} flyer ${index + 1}`}
+            sx={{ 
+            width: '100%', 
+            height: '100%', 
+            objectFit: 'contain', 
+            borderRadius: 1 }}
+          />
+          ))}
+
+
+
+        </Box>
       )}
     </Card>
   );
