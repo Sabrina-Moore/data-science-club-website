@@ -1,6 +1,5 @@
 import { Container } from '@mui/material'
 import EventList from '../components/eventList'
-import '../index.css'
 
 import photo1 from '../assets/event-photos/data-con.jpeg'
 import photo2 from '../assets/event-photos/9-24-26-speakers.jpg'
@@ -12,6 +11,10 @@ import photo7 from '../assets/event-photos/LancerHacks_intro.jpg'
 import photo8 from '../assets/event-photos/LancerHacks_team.jpg'
 import photo9 from '../assets/event-photos/LancerHacks_room.jpg'
 import photo10 from '../assets/event-photos/LancerHacks_award.jpg'
+import photo11 from '../assets/event-photos/11-12-26-speakers.jpg'
+import photo12 from '../assets/event-photos/11-12-26-panel.png'
+import photo13 from '../assets/event-photos/data-con-panel.jpg'
+import photo14 from '../assets/event-photos/data-con-panel2.jpg'
 
 import flyer1 from '../assets/flyers/Lancer_Hacks.png'
 import flyer2 from '../assets/flyers/Careers_Day_26.png'
@@ -43,6 +46,7 @@ import flyer4 from '../assets/flyers/industry_event_11-12.png'
     location: "El Camino College",
     rsvpLink: "",
     photo: [],
+    photoPortrait: [],
     flyers: [flyer3],
   },
   { name: "SEEDS Data Industry Event: Dr. Yong-Chuan Liu", 
@@ -51,7 +55,8 @@ import flyer4 from '../assets/flyers/industry_event_11-12.png'
     time: "6:00 PM - 8:00 PM PST",
     location: "15916 Crenshaw Blvd, Gardena, CA 90249",
     rsvpLink: "https://www.eventbrite.com/e/2026-fall-data-science-industry-event-924-tickets-1998698386678?aff=ebdsoporgprofile",
-    photo: [photo2, photo3],
+     photoLandscape: [photo2, photo3],
+     photoPortrait: [],
     flyers: [],
   },
   {
@@ -61,7 +66,8 @@ import flyer4 from '../assets/flyers/industry_event_11-12.png'
     time: "",
     location: "CSU Long Beach, 1250 Bellflower Blvd, Long Beach, CA 90840",
     rsvpLink: "",
-    photo: [photo1], 
+    photoLandscape: [photo13, photo14],
+    photoPortrait: [photo1],
     flyers: [],
   },
   {
@@ -71,7 +77,8 @@ import flyer4 from '../assets/flyers/industry_event_11-12.png'
     time: "Pending",
     location: "Pending, LACC Campus",
     rsvpLink: "https://www.lacc.edu/academics/pathways/stem/math-dept/datathon",
-    photo: [photo4], 
+    photoLandscape: [photo4],
+    photoPortrait: [],
     flyers: [],
   },
 {
@@ -81,7 +88,8 @@ import flyer4 from '../assets/flyers/industry_event_11-12.png'
     time: "9:00 AM - 9:00 PM PST",
     location: "WIFI Lounge, PCC Campus",
     rsvpLink: "",
-    photo: [photo7, photo8, photo9, photo10], 
+    photoLandscape: [photo7, photo8, photo9, photo10],
+    photoPortrait: [],
     flyers: [flyer1],
   },
   {
@@ -91,7 +99,8 @@ import flyer4 from '../assets/flyers/industry_event_11-12.png'
     time: "9:00 AM - 12:30 PM PST",
     location: "McCarthy Hall, CSU Fullerton",
     rsvpLink: "https://docs.google.com/forms/d/e/1FAIpQLSfbU0uE156ZdVQuAVkx5FklVyJyLJPLHRQ5F77kRuQqE3pvqQ/viewform",
-    photo: [photo5, photo6], 
+    photoLandscape: [photo5, photo6],
+    photoPortrait: [],
     flyers: [flyer2],
   },
   {
@@ -101,7 +110,8 @@ import flyer4 from '../assets/flyers/industry_event_11-12.png'
     time: "6:00 PM - 8:00 PM PST",
     location: "The Lab, 15916 Crenshaw Blvd Gardena, CA",
     rsvpLink: "https://www.eventbrite.com/e/2026-fall-data-science-industry-event-1112-tickets-2003358618557?utm_term=US-Los%20Angeles-1.NonTwoTowers-Reactivation.FreeTickets-listing.previousorganizer&utm_content=69a699f2-1028-4684-982c-ced9e6f5ec7f__6acf9a59f55d477e52e6d38a34747d9b__04a9bfbc-d724-4925-9c4e-ff477bfc3c41__c5add454-d8cf-4c4b-b7b4-4c4a5cdd8940&aff=ebemnsebconsumeremail&utm_medium=ebml&utm_campaign=clab_coex_lcm_dss_mec_mc_mum_0_0_previousorganizer-reactivation&utm_source=braze&lid=u18a01m2llzx&keep_tld=true",
-    photo: [], 
+    photoLandscape: [photo11],
+    photoPortrait: [photo12],
     flyers: [flyer4],
   },
 ];
@@ -139,3 +149,11 @@ export default function Events() {
     </Container>
   );
 }
+
+
+/* color pallete */
+/* light pink #f3cff1 dark pink #D7789F */
+/* dark purple #978A96 */
+/* light green #ADC8A3 or #A8BFA0 */
+/* green #295b23*/
+/* light blue #AEBAE3 navy #1C1E4D */

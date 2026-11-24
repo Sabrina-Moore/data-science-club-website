@@ -1,11 +1,4 @@
-import { useState } from 'react'
-import Box from '@mui/material/Box'
-import Button from '@mui/material/Button'
-import Container from '@mui/material/Container'
-import Typography from '@mui/material/Typography'
-import '../index.css'
 import ProjectComponent from "../components/projectComponent";
-
 import PdfPresentationDatathon26 from '../slides/Datathon26_GDP_Unemployment.pdf'
 
 
@@ -39,3 +32,5 @@ export default function Projects() {
     </>
   );
 }
+
+
